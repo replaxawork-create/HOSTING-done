@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt"
+
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["nodejs_20", "python311"]
+
+[deploy]
+startCommand = "python hosting_bot.py"
+restartPolicyType = "always"
